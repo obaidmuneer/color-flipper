@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Background Color : <span id="color">#f4f4f4</span></h3>
+        <button id="btn">Click Me</button>
+    </div>
+
+    <script>
+        const hexColor = [0,1, 2, 3, 4, 5, 6, 7, 8, 9,'a', 'b', 'c', 'd', 'e', 'f']
+        let color = document.querySelector('#color')
+        let btn = document.querySelector('#btn')
+
+        btn.addEventListener('click', function () {
+            let text = '#'
+            for (let i = 0; i < 6; i++) {
+                let randomNum = Math.floor(Math.random() * hexColor.length)
+                text += hexColor[randomNum]
+            }
+            // console.log(text);
+            color.innerText = text
+            document.body.style.backgroundColor = text
+        })
+
+        // https://www.pluralsight.com/blog/tutorials/understanding-hexadecimal-colors-simple#:~:text=Hex%20color%20codes%20start%20with,last%20two%20refer%20to%20blue.
+
+    </script>
+</body>
+
+</html>
